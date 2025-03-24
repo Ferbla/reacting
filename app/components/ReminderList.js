@@ -2,6 +2,7 @@ import { useEffect } from "react";
 
 export function ReminderList({ reminders = [] }) {
     useEffect(() => {
+        reminders.sort((a, b) => a.reminder_due_date > b.reminder_due_date)
         console.log("Updated Reminders:", reminders);
     }, [reminders]);
 
